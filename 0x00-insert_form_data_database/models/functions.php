@@ -77,9 +77,8 @@ function insert_data($table, $attributes, $values, $con)
 	$sql .= implode(", ", $attributes) . ") VALUES (";
 	$sql .= rtrim(str_repeat("?, ", count($values)), ", ") . ")";
 
-	echo "$sql";
 
-	// Initialize a prepared statement
+	/*  Initialize a prepared statement */
 	$stmt = $con->prepare($sql);
 
 	/* Dynamically determine the data types and bind parameters */
