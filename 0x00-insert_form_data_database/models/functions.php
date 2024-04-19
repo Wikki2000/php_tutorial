@@ -31,7 +31,6 @@ function create_database($database_name, $con)
 {
 	/* Read the SQL query from the file */
 	$sql = "CREATE DATABASE IF NOT EXISTS $database_name";
-	echo "$sql";
 
 	/* Execute the query and handle error */
 	if ($con->query($sql))
