@@ -1,12 +1,12 @@
 <?php
-include "model/function.php"; // Include the function file
+include "models/functions.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	// Handle form submission
+	// Handle form submission 
 	$name = $_POST["name"];
 	$email = $_POST["email"];
 	$comment = $_POST["comment"];
-	// Connect to the database
+	/* Connect to the database */
 	$con = connect_to_database("localhost", "root", "");
 
 	/* Attempt to create the database */
