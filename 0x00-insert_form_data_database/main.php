@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$table_attr = "id INT AUTO_INCREMENT PRIMARY KEY, Name VARCHAR(50), Email VARCHAR(50), Comment TEXT";
 	create_table($database_name, $table_name, $table_attr, $con);
 
-
 	/* Define the table name, attributes, and values for insertion */
 	$table = "users_info";
 	$attributes = ["Name", "Email", "Comment"];
