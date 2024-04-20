@@ -30,17 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 	/* Insert data into the table */
 	insert_data($table, $attributes, $values, $con);
+
+	/**
+	 * always comment out the block of code
+	 * when using 0-insert_to_db.html
+	 * since both share same main.php file in the directory
+	 */
 	if (filesize("1-insert_from_table.html") != 0)
 	{
 		include "1-insert_from_table.html";
 		echo "details of $name summited sucessfully";
 	}
-	/**
-	 * always comment from immediate above block of code
-	 * when using 0-insert_to_db.html in same directory
-	 * since both share main.php file
-	 */
-	
 
 	/* Close the database connection */
 	$con->close();
