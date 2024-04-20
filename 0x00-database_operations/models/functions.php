@@ -34,7 +34,7 @@ function create_database($database_name, $con)
 
 	/* Execute the query and handle error */
 	if ($con->query($sql))
-		echo "Database created successfully<br> ";
+		return true;
 	else
 		exit("Database creation failed: {$con->connect_error}");
 }
@@ -55,9 +55,9 @@ function create_table($database_name, $table_name, $table_attr, $con)
 
 	/* Execute the query and handle error */
 	if ($con->query($sql))
-		echo "Table created successfully<br>";
+		return true;
 	else
-		echo "Table creation failed: {$con->error}";
+		exit("Table creation failed: {$con->error}");
 }
 
 
@@ -98,7 +98,7 @@ function insert_data($table, $attributes, $values, $con)
 
 	/* Execute the statement and handle error */
 	if ($stmt->execute()) {
-		echo "Data inserted successfully";
+		return true;
 	} else {
 		echo "Error inserting data: {$stmt->error}";
 	}

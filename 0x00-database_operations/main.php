@@ -29,7 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$values = ["$name", "$email", "$comment"];
 
 	/* Insert data into the table */
-	insert_data($table, $attributes, $values, $con);
+	if(insert_data($table, $attributes, $values, $con))
+	{
+		include "1-index.html";
+	}
+	echo "details of $name summited sucessfully";
+	
+	
 
 	/* Close the database connection */
 	$con->close();
