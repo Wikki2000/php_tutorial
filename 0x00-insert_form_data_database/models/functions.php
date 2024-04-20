@@ -29,7 +29,6 @@ function connect_to_database($server_name, $user_name, $password)
  */
 function create_database($database_name, $con)
 {
-	/* Read the SQL query from the file */
 	$sql = "CREATE DATABASE IF NOT EXISTS $database_name";
 
 	/* Execute the query and handle error */
