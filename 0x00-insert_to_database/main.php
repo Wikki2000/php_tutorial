@@ -29,12 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$values = ["$name", "$email", "$comment"];
 
 	/* Insert data into the table */
-	if(insert_data($table, $attributes, $values, $con))
+	insert_data($table, $attributes, $values, $con);
+	if (filesize("1-insert_from_table.html") != 0)
 	{
-		include "1-index.html";
+		include "1-insert_from_table.html";
+		echo "details of $name summited sucessfully";
 	}
-	echo "details of $name summited sucessfully";
-	
+	/**
+	 * always comment from immediate above block of code
+	 * when using 0-insert_to_db.html in same directory
+	 * since both share main.php file
+	 */
 	
 
 	/* Close the database connection */
